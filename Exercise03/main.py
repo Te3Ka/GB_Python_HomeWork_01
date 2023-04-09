@@ -16,3 +16,13 @@ def author():
     print('Илья "Te3K@_PaynE" Новичихин')
     print('79811131773@yandex.ru')
     print('****************************')
+
+# Проверка на правильность введённого числа.
+def correct_number():
+    _number = int(input("Введите номер билета: "))
+    while (_number < 1000) or (_number > 999999):
+        _number = int(input("Введено неверное число! Введите заново: "))
+    return _number
+
+print("Программа проверяет, является ли введённый номер билета (шестизначный) счастливым.")
+_number_ticket = correct_number()
