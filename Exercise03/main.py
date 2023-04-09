@@ -24,5 +24,28 @@ def correct_number():
         _number = int(input("Введено неверное число! Введите заново: "))
     return _number
 
+# Сложение цифр
+def sum_digits(_number):
+    sum = 0
+    while (_number > 0):
+        sum += _number % 10
+        _number //= 10
+    return sum
+
+# Проверка на счастливый билет.
+def lucky_ticket(_num):
+    _num_first = _num // 1000
+    _num_second =  _num % 1000
+    _sum_first = sum_digits(_num_first)
+    _sum_second = sum_digits(_num_second)
+    if (_sum_first == _sum_second):
+        return bool(True)
+    else:
+        return bool(False)
+
 print("Программа проверяет, является ли введённый номер билета (шестизначный) счастливым.")
 _number_ticket = correct_number()
+_lucky = lucky_ticket(_number_ticket)
+print(f"Билет с номером {_number_ticket} {'' if _lucky else 'не'}счастливый.")
+
+author()
