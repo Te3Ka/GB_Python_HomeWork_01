@@ -18,3 +18,31 @@ def author():
     print('Илья "Te3K@_PaynE" Новичихин')
     print('79811131773@yandex.ru')
     print('****************************')
+
+# Проверка на введение положительного числа.
+def correct_number():
+    _number = int(input("Введите количество журавликов: "))
+    while (_number < 0):
+        _number = int(input("Введено неверное число! Введите заново: "))
+    return _number
+
+print("Дана следающая задача:")
+print("Петя, Катя и Серёжа делают из бумаги журавликов.")
+print("Вместе они сделали S журавликов.")
+print("Сколько журавликов сделал каждый ребёнок, если известно:")
+print("1) Петя и Серёжа сделали одинаковое количество журавликов.")
+print("2) Катя сделала в два раза больше, чем Петя и Сергей вместе.")
+
+_number_of_cranes = correct_number()
+if (_number_of_cranes % 6 != 0):
+    print("Введённое количество журавликов не подходит для решения данной задачи (получаются дробные числа).\n" + 
+          "Выполнение программы прервано.")
+else:
+    _cranes_Peter = _number_of_cranes // 6
+    _cranes_Sergey = _cranes_Peter
+    _cranes_Katya = (_cranes_Peter + _cranes_Sergey) * 2
+    print(f"Петя сделал {_cranes_Peter} журавликов")
+    print(f"Серёжа сделал {_cranes_Sergey} журавликов")
+    print(f"Катя сделала {_cranes_Katya} журавликов")
+
+author()
